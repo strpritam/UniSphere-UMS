@@ -1,7 +1,23 @@
+// {
+//   "$schema": "node_modules/wrangler/config-schema.json",
+//   "name": "tanstack-start-app",
+//   "compatibility_date": "2025-09-24",
+//   "compatibility_flags": ["nodejs_compat"],
+//   "main": "@tanstack/react-start/server-entry",
+// }
+
+
+// {
+//   "$schema": "node_modules/wrangler/config-schema.json",
+//   "name": "progress-portal",
+//   "compatibility_date": "2024-09-23",
+//   "compatibility_flags": ["nodejs_compat"],
+//   "main": "dist/server/index.js"
+// }
+
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "tanstack-start-app",
-  "compatibility_date": "2025-09-24",
-  "compatibility_flags": ["nodejs_compat"],
-  "main": "@tanstack/react-start/server-entry",
+  "name": "progress-portal",
+  "compatibility_date": "2024-09-23",
+  "compatibility_flags": ["nodejs_compat"]
 }

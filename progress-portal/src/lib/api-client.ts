@@ -65,6 +65,9 @@ class ApiError extends Error {
 }
 
 async function http<T>(path: string, init: RequestInit = {}): Promise<T> {
+  if (!API_BASE_URL) {
+    throw new ApiError("API base URL not configured. Check VITE_API_BASE_URL environment variable.", 500);
+  }
   const token = tokenStore.get();
   const res = await fetch(`${API_BASE_URL}${path}`, {
     ...init,

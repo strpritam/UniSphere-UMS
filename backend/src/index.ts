@@ -15,10 +15,11 @@ const allowedOrigins = (process.env.FRONTEND_ORIGIN ?? "http://localhost:5173,ht
   .map((x) => x.trim())
   .filter(Boolean);
 const localOriginPattern = /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/i;
+const vercelPattern = /^https:\/\/.*\.vercel\.app$/i;
 app.use(
   cors({
     origin: (origin, callback) => {
-      if (!origin || allowedOrigins.includes(origin) || localOriginPattern.test(origin)) {
+      if (!origin || allowedOrigins.includes(origin) || localOriginPattern.test(origin) || vercelPattern.test(origin)) {
         callback(null, true);
         return;
       }
